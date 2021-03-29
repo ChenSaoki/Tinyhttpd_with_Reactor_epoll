@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1283" height="1321" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<!--WillInclude_umdx-->
+<path d="M 758.47 125.44 L 684.59 158.66 L 536.81 158.66 L 462.92 125.44 L 536.81 92.23 L 684.59 92.23 Z M 758.47 125.44" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="547.16" y="133.18" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >负责监听socket连接</text>
+<path d="M 226.24 456.03 C 209.25 456.03 195.47 442.25 195.47 425.26 L 195.47 379.01 C 195.47 362.01 209.25 348.24 226.24 348.24 L 369.84 348.24 C 386.83 348.24 400.61 362.01 400.61 379.01 L 400.61 425.26 C 400.61 442.25 386.83 456.03 369.84 456.03 Z M 226.24 456.03" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="237.69" y="384.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >调用epoll_wait（）</text>
+<text x="263.04" y="409.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >注册新连接</text>
+<text x="257.08" y="434.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >处理http请求</text>
+<text x="589.70" y="81.04" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >主进程</text>
+<text x="211.28" y="476.58" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >工作线程（workerThread）</text>
+<path d="M 538.91 456.03 C 521.92 456.03 508.14 442.25 508.14 425.26 L 508.14 379.01 C 508.14 362.01 521.92 348.24 538.91 348.24 L 682.51 348.24 C 699.50 348.24 713.28 362.01 713.28 379.01 L 713.28 425.26 C 713.28 442.25 699.50 456.03 682.51 456.03 Z M 538.91 456.03" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="550.36" y="384.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >调用epoll_wait（）</text>
+<text x="575.71" y="409.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >注册新连接</text>
+<text x="569.75" y="434.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >处理http请求</text>
+<text x="523.94" y="476.58" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >工作线程（workerThread）</text>
+<path d="M 843.80 456.03 C 826.81 456.03 813.03 442.25 813.03 425.26 L 813.03 379.01 C 813.03 362.01 826.81 348.24 843.80 348.24 L 987.40 348.24 C 1004.39 348.24 1018.17 362.01 1018.17 379.01 L 1018.17 425.26 C 1018.17 442.25 1004.39 456.03 987.40 456.03 Z M 843.80 456.03" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="855.25" y="384.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >调用epoll_wait（）</text>
+<text x="880.60" y="409.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >注册新连接</text>
+<text x="874.64" y="434.87" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >处理http请求</text>
+<text x="828.83" y="476.58" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >工作线程（workerThread）</text>
+<path d="M 573.17 158.66 L 578.28 166.07 L 578.28 166.07 L 322.45 342.34 L 327.95 345.85 L 298.04 348.24 L 310.92 321.14 L 312.24 327.52 L 568.06 151.24 L 568.06 151.24 Z M 573.17 158.66" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 610.70 158.66 L 619.70 158.65 L 619.70 158.65 L 619.71 324.79 L 625.71 322.26 L 610.71 348.24 L 595.71 322.26 L 601.71 324.79 L 601.70 158.66 L 601.70 158.66 Z M 610.70 158.66" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 647.29 158.66 L 652.49 151.30 L 652.49 151.30 L 901.64 327.36 L 903.04 320.99 L 915.60 348.24 L 885.72 345.49 L 891.26 342.06 L 642.10 166.01 L 642.10 166.01 Z M 647.29 158.66" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 793.46 216.19 C 895.66 226.91 895.66 244.29 793.46 255.00 C 691.25 265.72 525.55 265.72 423.34 255.00 C 321.14 244.29 321.14 226.91 423.34 216.19 C 525.55 205.47 691.25 205.47 793.46 216.19" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="190.16" y="230.84" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >通过管道以轮询方式</text>
+<text x="204.16" y="255.84" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >分发浏览器连接</text>
+<path d="M 610.71 456.03 L 610.71 589.68" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 610.71 589.68 L 610.71 610.68 M 609.12 603.18 L 610.71 610.68 L 612.30 603.18" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="620.29" y="552.71" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >HTTP请求</text>
+<path d="M 462.92 612.63 L 758.47 612.63 L 758.47 679.06 L 462.92 679.06 Z M 462.92 612.63" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="551.70" y="640.04" font-family="Menlo" font-size="14.00px" fill="black" opacity="1.00" >accept_reaqest</text>
+<text x="582.70" y="658.59" font-family="Menlo" font-size="14.00px" fill="black" opacity="1.00" >处理请求</text>
+<path d="M 155.32 612.63 L 328.42 612.63 L 328.42 679.06 L 155.32 679.06 Z M 155.32 612.63" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="181.30" y="653.59" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >组装http，返回404</text>
+<path d="M 462.92 645.85 L 349.42 645.85" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 349.42 645.85 L 328.42 645.85 M 335.92 644.25 L 328.42 645.85 L 335.92 647.44" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="355.74" y="632.11" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >页面未找到</text>
+<path d="M 903.56 612.63 L 1076.65 612.63 L 1076.65 679.06 L 903.56 679.06 Z M 903.56 612.63" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="927.11" y="641.09" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >文件找到，读取文件</text>
+<text x="942.14" y="666.09" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >组装http，返回</text>
+<path d="M 758.47 645.85 L 882.56 645.85" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 882.56 645.85 L 903.56 645.85 M 896.06 647.44 L 903.56 645.85 L 896.06 644.25" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="786.86" y="615.29" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >无执行权限的</text>
+<text x="800.86" y="640.29" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >普通文件</text>
+<path d="M 381.95 811.79 L 555.05 811.79 L 555.05 878.21 L 381.95 878.21 Z M 381.95 811.79" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="417.77" y="852.74" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >fork进程处理cgi</text>
+<path d="M 610.70 679.06 L 610.70 745.42 L 468.50 745.42 L 468.50 790.79" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 468.50 790.79 L 468.50 811.79 M 466.90 804.29 L 468.50 811.79 L 470.09 804.29" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="324.98" y="758.64" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >有执行权限的cgi脚本</text>
+<path d="M 1031.70 845.00 L 957.81 878.21 L 810.03 878.21 L 736.14 845.00 L 810.03 811.79 L 957.81 811.79 Z M 1031.70 845.00" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="856.44" y="851.14" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >父进程</text>
+<path d="M 1027.70 1005.05 L 953.82 1038.26 L 806.04 1038.26 L 732.15 1005.05 L 806.04 971.84 L 953.82 971.84 Z M 1027.70 1005.05" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="857.44" y="1012.77" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >子进程</text>
+<path d="M 836.12 878.21 L 845.12 878.21 L 845.12 878.21 L 845.12 948.92 L 851.12 946.39 L 836.12 972.37 L 821.12 946.39 L 827.12 948.92 L 827.12 878.21 L 827.12 878.21 Z M 836.12 878.21" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 914.68 971.84 L 905.68 971.75 L 905.68 971.75 L 906.37 901.56 L 900.34 904.04 L 915.60 878.21 L 930.34 904.33 L 924.37 901.74 L 923.68 971.93 L 923.68 971.93 Z M 914.68 971.84" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="862.19" y="923.15" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >管道</text>
+<path d="M 615.64 1121.67 L 1104.72 1121.67 L 1104.72 1171.67 L 615.64 1171.67 Z M 615.64 1121.67" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<text x="832.18" y="1154.41" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >脚本执行</text>
+<path d="M 876.19 1038.26 L 850.60 1058.73 L 864.25 1058.73 L 864.25 1101.20 L 850.60 1101.20 L 876.19 1121.67 L 901.78 1101.20 L 888.13 1101.20 L 888.13 1058.73 L 901.78 1058.73 Z M 876.19 1038.26" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="white"  />
+
+<path d="M 555.05 845.00 L 645.60 845.00 L 715.14 845.00" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 715.14 845.00 L 736.14 845.00 M 728.64 846.59 L 736.14 845.00 L 728.64 843.40" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 468.50 878.21 L 468.50 1005.05 L 711.15 1005.05" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<path d="M 711.15 1005.05 L 732.15 1005.05 M 724.65 1006.64 L 732.15 1005.05 L 724.65 1003.45" stroke-width="1.00" stroke="black" stroke-linecap="round" stroke-linejoin="round" fill="none"  />
+
+<text x="1103.08" y="1265.37" font-family="PingFang SC" font-size="14.00px" fill="black" opacity="1.00" >by saoki</text>
+
+</svg>
+<!--OldSVGSize:11140 -->
+<!--Data_umdx_bIncluded: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-->

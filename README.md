@@ -35,6 +35,15 @@ make
 
 ## 框架
 
+![](websiti/httpd框架.svg)
 
+## 测试
+
+通过webbench模拟浏览器连接进行压测
+
+（图片）
 
 ## 参考
+
+* 《Linux高性能服务器编程》游双 著
+* Tinyhttpd
