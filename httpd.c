@@ -19,6 +19,7 @@
 int NUMBER_OF_WORKERS = 4;
 int pipefd[64][2];
 int pollingNumber = 0;
+pthread_mutex_t id_mutex;
 
 void *accept_request(void *client);
 void bad_request(int);
@@ -491,6 +492,7 @@ int startup(u_short *port)
 	socklen_t optlen;
 	optlen = sizeof(option);
 	option = 1;
+	//快速启动
 	setsockopt(httpd, SOL_SOCKET, SO_REUSEADDR, (void *)&option, optlen);
 
 	memset(&name, 0, sizeof(name));
@@ -564,6 +566,7 @@ void *workThread(void *fid)
 {
 
 	int id = *(int *)fid;
+	pthread_mutex_unlock(&id_mutex);
 	int epfd, nfds, client_sock;
 	struct epoll_event ev, events[20];
 	ev.data.fd = pipefd[id][0];
@@ -626,9 +629,12 @@ int main(int argv, char *argc[])
 		NUMBER_OF_WORKERS = atoi(argc[1]) > 64 ? 64 : atoi(argc[1]);
 		printf("Thread : %d\n", NUMBER_OF_WORKERS);
 	}
-
+	
+	pthread_mutex_init(&id_mutex,NULL);
 	//启动工作线程，并创建线程间通行管道
-	for (int i = 0; i < NUMBER_OF_WORKERS; i++)
+	int i = 0;
+	pthread_mutex_lock(&id_mutex);
+	while(i < NUMBER_OF_WORKERS)
 	{
 		if (pthread_create(&newthread[i], NULL, workThread, (void *)&i) != 0)
 			perror("pthread_create");
@@ -636,9 +642,10 @@ int main(int argv, char *argc[])
 		{
 			error_handling("pipe()_error");
 		}
-		//TODO：这里防止创建的进程获取到相同id，后面可以改成锁
-		sleep(1);
+		pthread_mutex_lock(&id_mutex);
+		i++;
 	}
+	pthread_mutex_destroy(&id_mutex);
 
 	//负责监听客户端连接，并通过轮询方式，派发给工作线程
 	while (1)
