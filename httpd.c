@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <sys/epoll.h>
 #include <fcntl.h>
-
 #define ISspace(x) isspace((int)(x))
 #define SERVER_STRING "Server: saoki's http/0.1.0\r\n" //定义个人server名称
 int NUMBER_OF_WORKERS = 4;
@@ -33,7 +32,24 @@ void not_found(int);
 void serve_file(int, const char *);
 int startup(u_short *);
 void unimplemented(int);
+int sendToPipe(int in,char *buf, int len)
+    {
+        int result = 0;
+        result = write(in, buf, sizeof(char) * len);
+        return result;
+    }
+    int readFromPipe(int out,char *buf,char end)
+    {
 
+        int i = 0;
+        while(1) {
+            read(out,buf+i,1);
+            if(buf[i] == end)break;
+            i++;
+			if(i > 8) break;
+        }
+        return i;
+    }
 /**
  * 请求导致服务器端口上的对accept()的调用
  * 返回：适当处理请求。
@@ -42,6 +58,7 @@ void unimplemented(int);
 void *accept_request(void *from_client)
 {
 	int client = *(int *)from_client;
+	free(from_client);
 	char buf[BUFSIZ];
 	int numchars;
 	char method[255];
@@ -570,7 +587,7 @@ void *workThread(void *fid)
 	int epfd, nfds, client_sock;
 	struct epoll_event ev, events[20];
 	ev.data.fd = pipefd[id][0];
-	ev.events = EPOLLIN | EPOLLET; //采用边缘触发
+	ev.events = EPOLLIN ; 
 
 	epfd = epoll_create(5);
 	epoll_ctl(epfd, EPOLL_CTL_ADD, pipefd[id][0], &ev);
@@ -586,22 +603,25 @@ void *workThread(void *fid)
 		{
 			if (events[i].data.fd == pipefd[id][0]) //有新的连接进入
 			{
-				if (read(pipefd[id][0], buf, BUFSIZ) == -1)
-				{
-					error_handling("working_read_pipe() error!");
-				}
+				readFromPipe(pipefd[id][0],buf,'\n');
+				
+				//printf("%s",buf);
 				client_sock = atoi(buf);
 				ev.data.fd = client_sock;
 				ev.events = EPOLLIN | EPOLLET;
 				setnonblocking(client_sock); //epoll_ET模式需要非阻塞状态
 				epoll_ctl(epfd, EPOLL_CTL_ADD, client_sock, &ev);
+				
 				//printf("add client: %d to epoll : %d\n",client_sock,id);
 			}
 			else if (events[i].events & EPOLLIN) //有http请求
 			{
 				//printf("accept %d\n",events[i].data.fd);
-				accept_request((void *)&events[i].data.fd);
+				int *curfd = (int*)malloc(sizeof(int));
+				*curfd = events[i].data.fd;
+				accept_request(curfd);
 				epoll_ctl(epfd, EPOLL_CTL_DEL, events[i].data.fd, &ev); //http为无状态协议，一次请求即可关闭
+				//close(*curfd);
 			}
 		}
 	}
@@ -658,10 +678,11 @@ int main(int argv, char *argc[])
 			error_handling("accept");
 
 		char sockbuf[33];
-		sprintf(sockbuf, "%d", client_sock);
+		int len = sprintf(sockbuf, "%d\n", client_sock);
 		//轮询派发任务
-		write(pipefd[pollingNumber++][1], sockbuf, sizeof(client_sock));
 
+		write(pipefd[pollingNumber++][1], sockbuf, len);
+		//perror("write");
 		//pollingNumber %= NUMBER_OF_WORKERS;
 		if (pollingNumber == NUMBER_OF_WORKERS)
 			pollingNumber = 0;
